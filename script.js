@@ -45,7 +45,7 @@ const projetos = [
   ,{
     titulo: "Studio Siler — Logotipo versão final",
     categoria: "Identidade Visual",
-    imagem: "img/studio-siler-versao-final.png",
+    imagem: "img/versão_final-02.png",
     descricao: "Versão final da marca: símbolo, nome e assinatura \"Beleza e Cuidado\".",
     inteira: true
   },
