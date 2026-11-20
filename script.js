@@ -42,6 +42,29 @@ const projetos = [
     descricao: "Logotipo desenvolvido para marca de cerâmica.",
     inteira: true
   }
+  ,{
+    titulo: "Studio Siler — Logotipo versão final",
+    categoria: "Identidade Visual",
+    imagem: "img/studio-siler-versao-final.png",
+    descricao: "Versão final da marca: símbolo, nome e assinatura \"Beleza e Cuidado\".",
+    inteira: true
+  },
+  {
+    titulo: "Studio Siler — Site",
+    categoria: "Web",
+    imagem: "img/studio-siler-site.png",
+    descricao: "Site institucional do Studio Siler, com a identidade visual aplicada.",
+    posicao: "left top",
+    link: "https://agssmarcela.github.io/StudioSiler/"
+  },
+  {
+    titulo: "Focinho Feliz — Site",
+    categoria: "Web",
+    imagem: "img/focinho-feliz.png",
+    descricao: "Página web do projeto Focinho Feliz.",
+    inteira: true,
+    link: "https://isabelakmetiukmultimidia-cyber.github.io/focinhofeliz/"
+  }
   // , { titulo: "Novo projeto", categoria: "Social Media", imagem: "img/arquivo.png", descricao: "..." }
 ];
 
@@ -63,15 +86,22 @@ function mostrarProjetos(categoria) {
     card.className = "projeto";
     card.innerHTML = `
       <div class="projeto__imagem ${p.inteira ? "projeto__imagem--inteira" : ""}">
-        <img src="${p.imagem}" alt="${p.titulo}" loading="lazy">
+        <img src="${p.imagem}" alt="${p.titulo}" loading="lazy" ${p.posicao ? `style="object-position:${p.posicao}"` : ""}>
       </div>
       <div class="projeto__info">
         <span class="projeto__categoria">${p.categoria}</span>
         <h3>${p.titulo}</h3>
         <p>${p.descricao}</p>
+        ${p.link ? `<a class="projeto__link" href="${p.link}" target="_blank" rel="noopener">Ver site →</a>` : ""}
       </div>
     `;
-    card.addEventListener("click", () => abrirLightbox(p.imagem, p.titulo));
+    const linkSite = card.querySelector(".projeto__link");
+    if (linkSite) linkSite.addEventListener("click", (e) => e.stopPropagation());
+    // projetos com link abrem o site; os demais ampliam a imagem
+    card.addEventListener("click", () => {
+      if (p.link) window.open(p.link, "_blank", "noopener");
+      else abrirLightbox(p.imagem, p.titulo);
+    });
     galeria.appendChild(card);
   });
 }
