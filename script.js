@@ -52,7 +52,7 @@ const projetos = [
   {
     titulo: "Studio Siler — Site",
     categoria: "Web",
-    imagem: "img/studio-siler-site.png",
+    imagem: "img/Screenshot_1.png",
     descricao: "Site institucional do Studio Siler, com a identidade visual aplicada.",
     posicao: "left top",
     link: "https://agssmarcela.github.io/StudioSiler/"
@@ -60,7 +60,7 @@ const projetos = [
   {
     titulo: "Focinho Feliz — Site",
     categoria: "Web",
-    imagem: "img/focinho-feliz.png",
+    imagem: "img/Screenshot_2.png",
     descricao: "Página web do projeto Focinho Feliz.",
     inteira: true,
     link: "https://isabelakmetiukmultimidia-cyber.github.io/focinhofeliz/"
